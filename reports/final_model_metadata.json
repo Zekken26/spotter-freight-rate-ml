@@ -1,0 +1,95 @@
+{
+  "december_model": {
+    "algorithm": "catboost.CatBoostRegressor",
+    "depth": 8,
+    "feature_policy": "december_compatible",
+    "features": [
+      "distance",
+      "weight",
+      "month",
+      "day_of_week",
+      "day_of_month",
+      "day_of_year",
+      "week_of_year",
+      "is_weekend",
+      "days_since_start",
+      "weight_per_mile",
+      "pickup",
+      "delivery",
+      "equipment"
+    ],
+    "floor_diagnostics": {
+      "nonpositive_raw_count": 0,
+      "positive_floor": 1e-06,
+      "raw_maximum": 987.3511299445233,
+      "raw_minimum": 825.5739409888656
+    },
+    "iterations": 100,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.1,
+    "loss_function": "RMSE",
+    "model_path": "models/final_december_catboost.cbm",
+    "prediction_path": "outputs/december_chart_predictions.csv",
+    "prediction_range": [
+      825.5739409888656,
+      987.3511299445233
+    ],
+    "prediction_rows": 31,
+    "random_seed": 42,
+    "role": "December chart",
+    "route_feature": false,
+    "task_type": "CPU",
+    "training_date_range": [
+      "2025-01-01",
+      "2025-10-31"
+    ],
+    "training_rows": 48000
+  },
+  "main_model": {
+    "algorithm": "sklearn.linear_model.Ridge",
+    "alpha": 10.0,
+    "feature_policy": "full",
+    "floor_diagnostics": {
+      "nonpositive_raw_count": 0,
+      "positive_floor": 1e-06,
+      "raw_maximum": 6590.501259048559,
+      "raw_minimum": 33.609796483634
+    },
+    "model_path": "models/final_ridge.joblib",
+    "prediction_path": "validation_predictions.csv",
+    "prediction_range": [
+      33.609796483634,
+      6590.501259048559
+    ],
+    "prediction_rows": 12000,
+    "random_seed": null,
+    "role": "assessment validation",
+    "target_transform": "direct",
+    "training_date_range": [
+      "2025-01-01",
+      "2025-10-31"
+    ],
+    "training_rows": 48000
+  },
+  "sha256": {
+    "models/final_december_catboost.cbm": "d224609e70ea7a76d51367d9dac446119cbc9d14da5f2de3b94a251e79b45b12",
+    "models/final_ridge.joblib": "7ef7dc0d1abe03a172df84e7ba588f02390ca9bfdb5346068b6283a551af5436",
+    "outputs/december_chart_predictions.csv": "83a1ffe8626470e30e3cddadb165748cd493148cfe9e76b51fa8bd3af8a9671f",
+    "validation_predictions.csv": "b63f06bcf35ad3b7b06bd31f5a3fb507e94b884022508b019962ff002bb35509"
+  },
+  "training": {
+    "date_max": "2025-10-31",
+    "date_min": "2025-01-01",
+    "rows": 48000,
+    "target": "posted_rate"
+  },
+  "versions": {
+    "catboost": "1.2.8",
+    "joblib": "1.5.3",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.2",
+    "scikit_learn": "1.9.0"
+  }
+}

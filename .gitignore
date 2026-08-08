@@ -1,0 +1,43 @@
+# Python environments
+.venv/
+venv/
+verify_env/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Notebook state
+.ipynb_checkpoints/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+*.tmp
+*.log
+
+# Generated model binaries
+models/*.joblib
+models/*.pkl
+models/*.cbm
+models/*.bin
+
+# Employer-provided private assessment files
+train-test.csv
+validation.csv
+validation-predictions-template.csv
+december-chart-inputs.csv
+freight-rate-ml-assessment.pdf
+score.py
+readme.md
+
+# Employer-data-derived audit artifact
+reports/data_audit.json
